@@ -1,0 +1,4 @@
+- name: 友链名称
+  url: https://example.com
+  desc: 描述文字
+  image: https://example.com/avatar.webp

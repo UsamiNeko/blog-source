@@ -1,0 +1,178 @@
+########################################
+# Basic Configuration
+########################################
+# main menu navigation
+menu:
+  - name: home
+    url: /
+  - name: archives
+    url: /archives
+  - name: about
+    url: /about
+
+subtitle:
+  typing:
+    enable: true
+    strings:
+      - 欢迎来到我的个人网站
+      - 分享技术与生活
+      - 努力学习，持续成长
+    typeSpeed: 100
+    backSpeed: 50
+    backDelay: 2000
+    startDelay: 300
+    loop: true
+    smartBackspace: false
+
+banner: "/images/my-banner.webp"
+favicon: "/images/favicon.ico"
+avatar: "avatar.webp"
+
+# Control the display of the post cover
+cover:
+
+# Control the display of the post toc
+toc: true
+toc_options:
+  list_number: true
+  min_depth: 1
+  max_depth: 6
+
+# Content
+excerpt_link: Read More
+
+# RSS
+rss: atom.xml
+
+footer:
+  since: 2025
+  powered: true
+  count: true
+  busuanzi: true
+
+# Sidebar
+sidebar:
+  position: right
+
+social:
+  github: https://github.com/UsamiNeko
+  bilibili: https://space.bilibili.com/2015126778
+
+widgets:
+  - category
+  - tag
+  - archive
+  - recent_posts
+
+archive_type: "monthly"
+show_count: false
+recent_posts_limits: 5
+
+uppercase_capsule: true
+
+########################################
+# Math Formula (KaTeX)
+########################################
+math:
+  enable: true
+  katex:
+    enable: true
+    autoRender: true
+  mathjax:
+    enable: false
+    options:
+      {
+        tex:
+          {
+            tags: "ams",
+            useLabelIds: true,
+            inlineMath: [["$", "$"], ['\\(', '\\)']],
+            displayMath: [["$$", "$$"], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            autoload: { color: [], colorv2: ["color"] },
+            packages: { "[+]": ["noerrors"] },
+          },
+        options:
+          {
+            skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+            ignoreHtmlClass: "tex2jax_ignore",
+            processHtmlClass: "tex2jax_process",
+          },
+        loader: { load: ["input/asciimath", "[tex]/noerrors"] },
+      }
+
+########################################
+# Code
+########################################
+code_block:
+  expand: true
+
+########################################
+# Animation
+########################################
+preloader:
+  enable: true
+
+animation:
+  enable: true
+
+firework:
+  enable: true
+  disable_on_mobile: true
+
+########################################
+# Dark Mode
+########################################
+dark_mode:
+  enable: auto
+
+########################################
+# Comment System
+########################################
+comment:
+  title:
+    zh-CN: 说些什么吧！
+  default: waline
+
+# waline:
+#   enable: false
+#   serverURL:
+
+########################################
+# Analytics
+########################################
+baidu_analytics: false
+google_analytics: false
+
+########################################
+# Search
+########################################
+algolia_search:
+  enable: false
+
+generator_search:
+  enable: false
+
+########################################
+# Footer
+########################################
+top:
+  enable: true
+  position: right
+
+article_copyright:
+  enable: true
+  content:
+    author: true
+    link: true
+    license: true
+    license_type: by-nc-sa
+
+########################################
+# Vendor / CDN override
+# 默认使用 npm.webcache.cn，但该 CDN 有时返回 403
+# 改为 jsDelivr (cdn.jsdelivr.net/npm/) 更稳定
+########################################
+vendor:
+  webcache: https://npm.webcache.cn/

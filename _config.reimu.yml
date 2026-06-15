@@ -176,3 +176,23 @@ article_copyright:
 ########################################
 vendor:
   webcache: https://npm.webcache.cn/
+
+########################################
+# Inject custom CSS to fix KaTeX formula spacing
+########################################
+injector:
+  head_end: |
+    <style>
+    /* 块级公式容器 */
+    .katex-display { position: relative; }
+    /* 宽度限制仅作用于块级公式，不干扰行内公式 */
+    .katex-display > .katex { width: calc(100% - 2px); }
+    /* 公式内无多余内边距 */
+    .katex-html { padding: 0 !important; }
+    /* 带标签的公式不用 flex 布局，避免被等号切分的多个 .base 散开 */
+    .katex-html:has(span.tag) { display: block !important; }
+    /* 标签用绝对定位放在右侧 */
+    .katex-display>.katex>.katex-html>.tag { position: absolute !important; right: 0; float: none !important; margin-left: 0 !important; }
+    /* 公式基线上居中 */
+    .katex-html .base { margin: 0 auto; }
+    </style>
